@@ -24,4 +24,3 @@ These are `usernameshack.txt` and `testhack1.txt` which are used to recreate the
 In an instance where Hydra isn't installed run: `sudo apt install hydra`  
   
 To confirm Hydra is successfully installed run: `hydra`
-test
