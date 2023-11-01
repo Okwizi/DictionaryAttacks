@@ -3,7 +3,7 @@
 ### *What is a dictionary attack?*
 A dictionary attack is a cyberattack to gain unauthorized access to a computer system or online account. It is a form of brute-force attack that relies on systematically trying many potential passwords or passphrases to guess the correct one.
 
-## *Prerequisites to use*
+## Prerequisites to use
 __NOTE:__ This simulation has been performed on a Linux based OS *i.e, Kali GNU/Linux 2023.3 only*
 
 ### 1. Mininet Virtual Machine (Mininet VM)
@@ -24,3 +24,5 @@ These are `usernameshack.txt` and `testhack1.txt` which are used to recreate the
 In an instance where Hydra isn't installed run: `sudo apt install hydra`  
   
 To confirm Hydra is successfully installed run: `hydra`
+
+## Usage
