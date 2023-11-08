@@ -1,10 +1,14 @@
 # PROJECT: DictionaryAttacks {Dictionary Attack Simulation}
 ## Overview
 ### *What is a dictionary attack?*
-A dictionary attack is a cyberattack to gain unauthorized access to a computer system or online account. It is a form of brute-force attack that relies on systematically trying many potential passwords or passphrases to guess the correct one.
+A dictionary attack is a cyberattack to gain unauthorized access to a host computer system(s) or online account(s). It is a form of brute-force attack that takes input from many potential passwords, passphrases, or usernames and tries to guess the correct one. 
+
+The simulation discussed in this project involves initiating a dictionary attack on a *Host-only network VM* i.e. Mininet from the host machine. 
 
 ## Prerequisites to use
-__NOTE:__ This simulation has been performed on a Linux based OS *i.e, Kali GNU/Linux 2023.3 only*
+__NOTE:__ This simulation has been performed on a Linux based OS *i.e, Kali GNU/Linux 2023.3 only* 
+
+Any code executed in a terminal is recommended to be executed with elevated privileges.
 
 
 ### 1. VirtualBox
@@ -30,10 +34,22 @@ Click on the folder icon to choose the `.ovf` that was extracted earlier and cli
 
 Set up the appliance if needed (Recommended to leave settings as default) then click finish. 
 
-Now go into the Virtual Machine's Settings and navigate to the Network tab.
+Now go to the tools tab (listed above the Mininet VM) and navigate to the host-only networks tab. 
+
+Click on the create icon and an adapter called *vboxnet0* will appear. You can configure the adapter if you need to. Click on apply. 
+
+Now navigate back to your Mininet VM and click on the settings gear icon to open the VM's settings. 
+
+Navigate to the "Network" Tab and enable "Adapter 1" and "Adapter 2" (Adapters 3 and 4 should remain disabled). 
+
+Go into Adapter 1 and change the "Attached to:" option to `NAT`. 
+
+Go into Adapter 2 and change the "Attached to:" option to `Host-only Adapter` and select `vboxnet0` as the name from the provided Dropbox. This allows other programs running on your host computer to connect to the VM using SSH. 
+
+Other VM settings may be changed to the user's liking. 
 
 ### 3. Username and Password Lists *(already provided in this repo)*
-These are `usernameshack.txt` and `testhack1.txt` which are used to recreate the attack.
+These are `usernameshack.txt` and `testhack1.txt` used to recreate the attack.
 
 
 ### 4. Hydra
